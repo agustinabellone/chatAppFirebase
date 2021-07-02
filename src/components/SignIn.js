@@ -7,7 +7,11 @@ function SignIn() {
   //Ingreso con Google
   function signInWithGoogle() {
     const provider = new firebase.auth.GoogleAuthProvider();
-    auth.signInWithPopup(provider);
+    auth.signInWithPopup(provider).then(() => {
+      console.log("Todo ok")
+    }).catch((error) => {
+      console.log(error)
+    });
   }
 
   return (
